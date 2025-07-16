@@ -1,0 +1,36 @@
+# Proyecto Evaluación por Estrellas - MultiverseX Devnet
+
+Este proyecto permite que cada alumno cree su propio contrato evaluable. Los demás compañeros pueden votar entre 1 y 5 estrellas. Se almacena una lista de contratos desplegados y solo se puede votar una vez por contrato antes de su fecha de expiración.
+
+## Archivos del proyecto
+
+- `lib.rs`: Smart contract por alumno (compilable con `mxpy contract build`).
+- `cliente.sh`: Script con menú para crear, votar y ver ranking.
+- `contratos.txt`: Lista compartida de contratos desplegados (se genera automáticamente).
+- `wallet.pem`: Archivo de clave del alumno (no incluido aquí).
+
+## Cómo compilar
+
+1. Instala el SDK de MultiversX (`mxpy`) y Rust.
+2. Ejecuta:
+   ```
+   mxpy contract build
+   ```
+
+## Cómo usar el script
+
+1. Dale permisos de ejecución:
+   ```
+   chmod +x cliente.sh
+   ```
+
+2. Ejecuta:
+   ```
+   ./cliente.sh
+   ```
+
+3. Opciones disponibles:
+   - Crear contrato: lo despliega en devnet y lo registra.
+   - Votar a compañeros: solo a contratos activos y no evaluados por ti.
+   - Ver contratos disponibles.
+   - Ver ranking de notas medias.
